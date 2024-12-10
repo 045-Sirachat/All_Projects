@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ย้ายแท็ก <p> มาภายใน <body> -->
+    <p id="demo"></p>
+
+    <script>
+        
+   
+        // สตริง JSON
+        const json_txt = '{"brand":"Toyota","model":"Camry","color":"Bronze","usage":10}';
+
+        // แปลงสตริง JSON เป็น Object
+        const obj = JSON.parse(json_txt);
+
+        let text = "";
+
+        // วนลูปผ่านคุณสมบัติของ Object
+        for (let key in obj) {
+            text += key + ": " + obj[key] + ",";
+        }
+
+        // แสดงผลลัพธ์ในแท็ก <p> ที่มี id="demo"
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>
+
+
+
+

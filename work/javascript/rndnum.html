@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>เกมสุ่มตัวเลข</h1>
+        <button onclick="startGame()">start</button>
+        <p  id="computerNumber">x</p>
+        <img id="Comimg" src="" alt="" width="120"><br>
+        <button onclick="randomforUser()">สุ่มเลข</button>
+        <p id="userNumber">y</p>
+        <img id="userimg" src="" alt="" width="120">
+        <p id="resultMessage"></p>
+    </div>
+    <script>
+        var rnd_com = 0;
+        var rnd_user = 0;
+
+        function startGame(){
+            rnd_com = Math.floor(Math.random()*10);
+             rnd_com = randomNumber();
+            // alert(rnd_com);
+            document.getElementById('computerNumber').textContent = rnd_com;
+            document.getElementById('Comimg').src = `images/${rnd_com}.png`
+            
+
+        }
+
+        function randomNumber(){
+            let r_number = 0;
+            r_number = Math.floor(Math.random()*10);
+            return r_number;
+            
+        }
+
+        function randomforUser(){
+            rnd_user = randomNumber();
+            // alert("rnd_user = " + rnd_user);
+            document.getElementById('userNumber').textContent = rnd_user;
+            document.getElementById('userimg').src = `images/${rnd_user}.png`
+            compareNumber(rnd_user,rnd_com);
+        }
+
+        function compareNumber(rnd_user,rnd_com){
+            let result = '';
+
+            if(rnd_com > rnd_user){
+                result = "ความพยายามอยู่ที่ไหนก็อยู่ที่นั่น ลองใหม่นะ";
+            }else if(rnd_com < rnd_user){
+                result = "ยินดีด้วย คุณชนะ!";
+            }else{
+                result = "เสมอกันซะแล้ว";
+            }
+            
+            document.getElementById('resultMessage').textContent = result;
+        }
+        
+    
+
+    </script>
+    
+</body>
+</html>

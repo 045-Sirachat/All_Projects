@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> 
+</head>
+
+<body class="relative">
+    <nav>
+      <header class="bg-red-600 shadow-md">
+        <div class="container mx-auto px-4 py-4">
+          <div class="w-full flex items-center">
+            <a href="home.html">
+              <img src="images/logo.png" alt="Logo" class="h-16">
+            </a>
+            <form action="#" method="GET" class="ml-10 flex-grow">
+              <input type="text" name="search" placeholder="What would you like to eat?" class="px-4 py-2 w-2/3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">          
+            </form>
+            <div class="ml-4 flex items-center space-x-6">
+              <a href="#" id="cart-icon" class="relative">
+                <img src="images/cark.png" alt="Cart" class="h-8 w-8">
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">0</span>
+              </a>
+              <a href="mywishlist.html"><img src="images/heart.png" alt="Favorites" class="h-6 w-6"></a>
+              <a href="Account.html"><img src="images/user2.png" alt="Profile" class="h-6 w-6"></a>
+            </div>
+          </div>
+        </div>
+      </header>
+    </nav>
+  
+    <div>
+      <ul class="mt-6 flex justify-center space-x-6">
+        <li><a href="product.html" class="text-gray-700 hover:text-blue-500 font-medium text-xl px-4 py-2 rounded">Deals</a></li>
+        <li><a href="product.html" class="text-gray-700 hover:text-blue-500 font-medium text-xl px-4 py-2 rounded">Food</a></li>
+        <li><a href="product.html" class="text-gray-700 hover:text-blue-500 font-medium text-xl px-4 py-2 rounded">Most Popular</a></li>
+        <li><a href="Payment.html" class="text-gray-700 hover:text-blue-500 font-medium text-xl px-4 py-2 rounded">My Orders</a></li>
+      </ul>
+    </div>
+
+    <main class="p-8">
+        <div class="bg-red-600 text-white p-4 flex items-center rounded-md">
+            <div class="w-24 h-24 bg-white rounded-full mr-4 flex items-center justify-center">
+                <span class="text-gray-500">Profile Pic</span>
+            </div>
+            <div>
+                <div id="profileName" class="text-lg font-bold">นายไอที ดีเสมอ</div>
+            </div>
+        </div>
+
+        <nav class="bg-white p-4 flex justify-center space-x-4">
+            <a href="Payment.html" class="text-black">My Orders</a>
+            <a href="myaddress.html" class="text-black">MY Addresses</a>
+            <a href="mywishlist.html" class="text-black">My Wishlist</a>
+            <a href="Account.html" class="text-black">My Account</a>
+        </nav>
+
+        <section class="mt-8 p-8 bg-white shadow border-2 border-black rounded">
+            <h2 class="text-lg font-bold mb-4">บัญชี</h2>
+            <p class="mb-4">เรียกดูและแก้ไขข้อมูลส่วนตัวของคุณด้านล่าง</p>
+            <h3 class="font-bold mb-2">ข้อมูลส่วนตัว</h3>
+            <p class="mb-4">อัปเดตข้อมูลส่วนตัวของคุณ</p>
+
+            <form onsubmit="updateProfile(event)">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="firstName" class="block text-sm font-medium text-gray-700">ชื่อ-นามสกุล</label>
+                        <input type="text" id="firstName" class="mt-1 p-2 block w-full border border-gray-300 rounded">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">เบอร์โทร</label>
+                        <input type="text" id="phone" class="mt-1 p-2 block w-full border border-gray-300 rounded">
+                    </div>
+                </div>
+
+                <div class="flex justify-end space-x-4 mt-4">
+                    <button type="button" id="logoutButton" class="bg-gray-300 text-black py-2 px-4 rounded"></button>
+                    <button type="submit" class="bg-red-600 text-white py-2 px-4 rounded">อัปเดตข้อมูล</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-red-600 p-8 text-white">
+        <div class="flex justify-around">
+            <div>
+                <h2 class="font-bold">Need Help?</h2>
+                <p>Visit our Customer Support for assistance or call us at</p>
+                <p class="font-bold">083-524-6335</p>
+            </div>
+            <div>
+                <h2 class="font-bold">Menu</h2>
+                <ul>
+                    <li><a href="#" class="text-white">Deals</a></li>
+                    <li><a href="#" class="text-white">Food</a></li>
+                    <li><a href="#" class="text-white">Most Popular</a></li>
+                    <li><a href="#" class="text-white">My Orders</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-bold">Info</h2>
+                <ul>
+                    <li><a href="#" class="text-white">FAQ</a></li>
+                    <li><a href="#" class="text-white">About Us</a></li>
+                    <li><a href="#" class="text-white">Customer Support</a></li>
+                    <li><a href="#" class="text-white">Locations</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-bold">My Choice</h2>
+                <ul>
+                    <li><a href="#" class="text-white">Favorites</a></li>
+                    <li><a href="#" class="text-white">My Orders</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        window.onload = function() {
+            // Load user data from Local Storage
+            const user = JSON.parse(localStorage.getItem('user'));
+            const logoutButton = document.getElementById('logoutButton');
+
+            if (user) {
+                document.getElementById('firstName').value = user.name;
+                document.getElementById('phone').value = user.phone;
+                document.getElementById('profileName').textContent = user.name;
+                logoutButton.textContent = 'ออกจากระบบ';
+                logoutButton.onclick = logout;
+            } else {
+                logoutButton.textContent = 'ล็อกอิน';
+                logoutButton.onclick = login;
+            }
+        };
+
+        function updateProfile(event) {
+            event.preventDefault();
+
+            // Get updated values
+            const name = document.getElementById('firstName').value;
+            const phone = document.getElementById('phone').value;
+            const user = {
+                name,
+                phone,
+                password: JSON.parse(localStorage.getItem('user')).password
+            };
+
+            // Save updated values to Local Storage
+            localStorage.setItem('user', JSON.stringify(user));
+            document.getElementById('profileName').textContent = name;
+            alert('ข้อมูลได้รับการอัปเดตเรียบร้อยแล้ว');
+        }
+
+        function logout() {
+            localStorage.removeItem('user');
+            window.location.href = 'login.html';
+        }
+
+        function login() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

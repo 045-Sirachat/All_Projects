@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 text-white">
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-500 text-white p-4  fixed top-0 left-0 w-full z-50">
+        <ul class="flex space-x-4 ">
+            <li><a href="#" class="hover:underline">Home</a></li>
+            <li><a href="#" class="hover:underline">Product</a></li>
+            <li><a href="#" class="hover:underline">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-20 flex flex-col sm:flex-row p-4 space-y-4 sm:space-y-0 sm:space-x-4 ">
+        <!-- Ad - 1 -->
+        <div class="bg-blue-300 flex-1 p-8 text-center lg:bg-black md:bg-gray-100">Ad - 1</div>
+        <!-- Ad - 2 -->
+        <div class="bg-blue-300 flex-1 p-8 text-center lg:bg-black md:bg-gray-100">Ad - 2</div>
+        <!-- Ad - 3 -->
+        <div class="bg-blue-300 flex-1 p-8 text-center lg:bg-black md:bg-gray-100">Ad - 3</div>
+    </div>
+
+    <!-- Advertisement Section -->
+    <div class="flex fixed bottom-4 right-4  p-4 ">
+        <div class="bg-blue-300 flex-1 p-8 text-center max-w-md">Advertisement</div>
+    </div>
+</body>
+</html>

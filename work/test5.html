@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="sends_data()">sends_data</button>
+
+
+    <script>
+        function sends_data() {
+            const json_txt = '{"name":"Oak","birth":"2004-03-11 ","city":"ตรัง(พลเมืองตรัง)"}';
+            location.assign("http://172.21.231.71/siwipa/test.php?Oak=" + json_txt);
+            
+           
+        }
+        
+    </script>
+</body>
+</html>

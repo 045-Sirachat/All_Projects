@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Location Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-white h-screen flex flex-col" style="background-color: #222121;">
+    <!-- Navbar -->
+    <nav class="p-2" style="background-color: #2c2c2c;">
+        <div class="w-full flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="Dashboard.html">
+                <img src="images/just_logo.png" alt="Logo" class="w-12">
+                </a>
+                <div class="ml-2 text-white text-sm">
+                    <div id="currentDate"></div>
+                    <div id="currentTime"></div>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2 text-white font-bold text-lg cursor-pointer" onclick="toggleDropdown()">
+                <img id="dropdownIcon" src="images/downward-arrow.png" alt="Arrow Down" class="w-8">
+                <div id="menuTitle">Selected Device Location Details</div>
+            </div>
+            <div class="flex space-x-4">
+                <a href="dust.html">
+                <img src="images/next.png" alt="Next" class="w-6">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dropdown Content -->
+    <div id="dropdownContent" class="hidden text-white p-4 mt-2 w-[300px] rounded-lg shadow-lg absolute" style="background-color: #2c2c2c; right: 710px; top: 50px;">
+        <ul class="list-none">
+            <li class="py-2 px-4 cursor-pointer hover:bg-gray-600 rounded-md" onclick="selectOption('IITM, Chennai')">IITM, Chennai</li>
+            <li class="py-2 px-4 cursor-pointer hover:bg-gray-600 rounded-md" onclick="selectOption('Mavelipuram, Kochi')">Mavelipuram, Kochi</li>
+            <li class="py-2 px-4 cursor-pointer hover:bg-gray-600 rounded-md" onclick="selectOption('2nd Floor, KSUM')">2nd Floor, KSUM</li>
+            <li class="py-2 px-4 cursor-pointer hover:bg-gray-600 rounded-md" onclick="selectOption('Scan Centre, Thrissur')">Scan Centre, Thrissur</li>
+            <li class="py-2 px-4 cursor-pointer hover:bg-gray-600 rounded-md" onclick="selectOption('Casa Blanca Apts, Edapally, Kochi')">Casa Blanca Apts, Edapally, Kochi</li>
+            <li class="py-2 px-4 cursor-pointer hover:bg-gray-600 rounded-md" onclick="selectOption('RECCA Valley, Kochi')">RECCA Valley, Kochi</li>
+        </ul>
+    </div>
+    
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8 grid grid-rows-2 gap-8">
+        <!-- Upper Section -->
+        <div class="grid grid-cols-3 gap-6">
+            <!-- Map Section -->
+            <div class=" p-6 rounded-lg flex flex-col items-center justify-center" style="background-color: #2c2c2c;">
+                <h3 class="font-bold text-lg mb-4">Location Map</h3>
+                <div class="w-full h-64 rounded-md overflow-hidden">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387144.0075837554!2d80.19984124584794!3d13.082680232788727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52640f021f28ff%3A0x78e7b0593f8652ae!2sChennai%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sus!4v1635937027653!5m2!1sen!2sus"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        class="rounded-md">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Device Information Section -->
+            <div class=" p-6 rounded-lg flex flex-col items-center justify-center" style="background-color: #2c2c2c;">
+                <h3 class="font-bold text-lg mb-4">Device Information</h3>
+                <ul class="text-sm space-y-2">
+                    <li><span class="font-bold">Device ID:</span> ESLNT001</li>
+                    <li><span class="font-bold">Status:</span> Online</li>
+                    <li><span class="font-bold">Latitude:</span> 13.067439</li>
+                    <li><span class="font-bold">Longitude:</span> 80.237617</li>
+                </ul>
+            </div>
+
+            <!-- AQI Information Section -->
+            <div class=" rounded-lg flex flex-col items-center justify-center" style="background-color: #2c2c2c;">
+                <h3 class="font-bold text-lg mb-4">Air Quality Index (AQI)</h3>
+                <div class="relative w-32 h-32 mx-auto">
+                    <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 36 36">
+                        <path
+                            d="M18 2.0845
+                               a 15.9155 15.9155 0 0 1 0 31.831
+                               a 15.9155 15.9155 0 0 1 0 -31.831"
+                            fill="none" stroke="#FFB300" stroke-width="2.8" stroke-dasharray="70, 100"
+                        />
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold">
+                        124
+                    </div>
+                </div>
+                <p class="text-yellow-400 font-bold mt-4">Quality: Moderate</p>
+                <p class="text-sm text-gray-300">Prominent Pollutant: CO</p>
+            </div>
+        </div>
+
+        <!-- Lower Section (AQI Categories) -->
+        <section class=" p-6 rounded-lg mb-12" style="background-color: #222121;">
+            <h2 class="text-center font-bold text-xl mb-5" style="padding-bottom: 35px;">AQI Categories</h2>
+            <div class="grid grid-cols-6 gap-6 text-center">
+                <div class="bg-green-600 p-8 rounded-lg flex flex-col items-center justify-center">
+                    <h3 class="font-bold text-lg">Good</h3>
+                    <p class="text-md">(0-50)</p>
+                </div>
+                <div class="bg-lime-500 p-8 rounded-lg flex flex-col items-center justify-center">
+                    <h3 class="font-bold text-lg">Satisfactory</h3>
+                    <p class="text-md">(51-100)</p>
+                </div>
+                <div class="bg-yellow-400 p-8 rounded-lg flex flex-col items-center justify-center">
+                    <h3 class="font-bold text-lg">Moderate</h3>
+                    <p class="text-md">(101-200)</p>
+                </div>
+                <div class="bg-orange-400 p-8 rounded-lg flex flex-col items-center justify-center">
+                    <h3 class="font-bold text-lg">Poor</h3>
+                    <p class="text-md">(201-300)</p>
+                </div>
+                <div class="bg-red-500 p-8 rounded-lg flex flex-col items-center justify-center">
+                    <h3 class="font-bold text-lg">Very Poor</h3>
+                    <p class="text-md">(301-400)</p>
+                </div>
+                <div class="bg-red-700 p-8 rounded-lg flex flex-col items-center justify-center">
+                    <h3 class="font-bold text-lg">Severe</h3>
+                    <p class="text-md">(401-500)</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function updateDateTime() {
+            const dateElement = document.getElementById("currentDate");
+            const timeElement = document.getElementById("currentTime");
+            const now = new Date();
+
+            const dateOptions = { day: 'numeric', month: 'long', year: 'numeric' };
+            dateElement.textContent = now.toLocaleDateString('en-GB', dateOptions);
+
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            timeElement.textContent = now.toLocaleTimeString('en-GB', timeOptions);
+        }
+
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById("dropdownContent");
+            const dropdownIcon = document.getElementById("dropdownIcon");
+
+            if (dropdownContent.classList.contains("hidden")) {
+                dropdownContent.classList.remove("hidden");
+                dropdownIcon.src = "images/caret-arrow-up.png";
+            } else {
+                dropdownContent.classList.add("hidden");
+                dropdownIcon.src = "images/downward-arrow.png";
+            }
+        }
+
+        function selectOption(option) {
+            const menuTitle = document.getElementById("menuTitle");
+            menuTitle.textContent = option;
+            toggleDropdown();
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>

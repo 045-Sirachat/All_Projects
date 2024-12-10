@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        // สตริง JSON ที่ถูกต้อง
+        const json_txt ='{"name":"Sirchat","birth":"2004-03-11","city":"ตรัง(พลเมืองตรัง)"}';
+        
+        // แปลงสตริง JSON เป็น Object
+        const obj = JSON.parse(json_txt);
+        
+        // แสดงผลวันที่ในรูปแบบที่อ่านง่าย
+        document.getElementById("demo").innerHTML = obj.name + " , " + obj.birth + " , " + obj.city;
+    </script>
+</body>
+</html>

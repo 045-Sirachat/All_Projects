@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+
+</head>
+<body>
+    <div style="width: 100px; border: 1px solid black;" onmouseover="Mousehover()" id="Div">Hello world</div>
+    <div id="Div1">Hello world 1</div>
+    <button onclick="Changewords()">click</button>
+    <button onclick="ClearMe()"> Clear Me</button>
+    <div onmouseover="Changecolor()" id="Div2">โทดๆ มายแบดๆ</div>
+    <hr>
+
+    <input style="margin-top: 50px; margin-bottom: 50px;" onkeydown="Keydown()" type="text" name="" id="input1">
+
+    <hr>
+    <form name="" method="post" onsubmit="return validateForm()" style="margin-top: 50px;">
+        <h1>Form</h1>
+        <label for="name">Name</label>
+        <input type="text" id="txtname">
+        <button>Submit</button>
+    </form>
+
+
+    <script>
+    
+        function Mousehover(){
+            alert("Don't Touch Me")
+            console.log("Mousehover")
+        }        function Changewords() { 
+            document.getElementById('Div1').textContent = 'Sawasdee'; 
+        }
+
+        function ClearMe() {
+            document.getElementById('Div1').textContent = 'Clear Done!';
+        }
+        function Changecolor() {
+            document.getElementById('Div2').style.background = 'red';
+            document.getElementById('Div2').style.color = 'white';
+        }
+
+        function Keydown() {
+            console.log(document.getElementById('input1').value);
+        }
+
+        function validateForm() {
+            let name = document.getElementById('txtname').value;
+            if (name == "") {
+                alert("ใส่ข้อมูล Name ให้ครบถ้วน");
+                console.log("ฟอร์มไม่สมบูรณ์ : ชื่อว่าง");
+                return false; 
+            }
+            // return true; 
+        }
+
+        
+    </script>
+</body>
+</html>

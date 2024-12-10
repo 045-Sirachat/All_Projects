@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get" onsubmit="return validateForm()">
+        <h3>Student Information</h3>
+        
+        <label for="name">Name</label><br>
+        <input type="text" id="name" size="25"><br><br>
+        
+        <label for="phone">Phone</label><br>
+        <input type="text" id="phone" size="10"><br><br>
+        
+        <label>Gender</label><br>
+        <input type="radio" id="male" name="gender" value="Male"> Male
+        <input type="radio" id="female" name="gender" value="Female"> Female<br><br>
+        
+        <label for="major">Major</label><br>
+        <select id="major">
+            <option value="">Select Major</option>
+            <option value="IT">IT</option>
+            <option value="Eng">Engineer</option>
+            <option value="RT">Rubber Technology</option>
+        </select><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+
+    <script>
+        function showAlert() {
+            alert(this.value);  
+        } 
+        document.getElementById('name').ondblclick = showAlert;
+        document.getElementById('phone').ondblclick = showAlert;
+        document.getElementById('male').ondblclick = showAlert;
+        document.getElementById('female').ondblclick = showAlert;
+        document.getElementById('major').ondblclick = showAlert;
+
+      
+        function showlog() {
+            console.log(this.value);
+        }
+        document.getElementById('name').onkeyup = showlog;
+        document.getElementById('phone').onkeyup = showlog;
+
+        function validateForm() {
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+            let male = document.getElementById('male').checked;
+            let female = document.getElementById('female').checked;
+            let major = document.getElementById('major').value;
+
+            // ตรวจสอบ Name
+            if (name == "") {
+                alert("ใส่ข้อมูล Name ให้ครบถ้วน");
+                return false; 
+            }
+            
+            // ตรวจสอบ Phone
+            if (phone == "") {
+                alert("ใส่ข้อมูล Phone ให้ครบถ้วน");
+                return false;
+            }
+
+            // ตรวจสอบ Gender
+            if (!male && !female) {
+                alert("กรุณาเลือก Gender");
+                return false;
+            }
+
+            // ตรวจสอบ Major
+            if (major == "") {
+                alert("กรุณาเลือก Major");
+                return false;
+            }
+
+            return true; // ถ้าทุกช่องถูกกรอกครบ อนุญาตให้ส่งฟอร์ม
+        }
+
+    </script>
+</body>
+</html>

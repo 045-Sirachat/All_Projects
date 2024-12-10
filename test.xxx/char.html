@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body>
+    <button style="margin-right: 10px; padding: 10px;" onclick="showBarChart()">Show Bar Graph</button>
+    <button style="margin-right: 10px; padding: 10px;" onclick="showLineChart()">Show Line Graph</button>
+    
+    <canvas id="barChart" style=" margin: 20 auto; width:100%;max-width:600px; display:none;"></canvas>
+    <canvas id="lineChart" style="width:100%;max-width:600px; display:none;"></canvas>
+
+    <script>
+        // Bar Chart
+        var xValuesBar = ["IT", "Chemistry", "EBC", "BM", "วทก", "Engineer"];
+        var yValuesBar = [70, 20, 150, 100, 20, 45];
+        var barColors = ["red", "red", "red", "red", "red", "red"];
+
+        var barChart = new Chart("barChart", {
+            type: "bar",
+            data: {
+                labels: xValuesBar,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValuesBar
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Bar Chart Example"
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        // Line Chart
+        var xValuesLine = ["IT", "Chemistry", "EBC", "BM", "วทก", "Engineer"];
+        var yValuesLine = [70, 20, 150, 100, 20, 45];
+
+        var lineChart = new Chart("lineChart", {
+            type: "line",
+            data: {
+                labels: xValuesLine,
+                datasets: [{
+                    fill: false,
+                    lineTension: 0,
+                    borderColor: "lightblue",
+                    pointBackgroundColor: "red",
+                    data: yValuesLine
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Line Chart Example"
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        // Functions to Show/Hide Graphs
+        function showBarChart() {
+            document.getElementById("barChart").style.display = "block"; // แสดง Bar Graph
+            document.getElementById("lineChart").style.display = "none"; // ซ่อน Line Graph
+        }
+
+        function showLineChart() {
+            document.getElementById("lineChart").style.display = "block"; // แสดง Line Graph
+            document.getElementById("barChart").style.display = "none"; // ซ่อน Bar Graph
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-800 text-white">
+    <div class="container mx-auto max-w-screen-lg p-4">
+        <!-- Header -->
+        <div class="bg-gray-900 text-3xl py-4 rounded-t-lg shadow-lg">
+            <h1 class="text-white text-center font-bold">Rock–Paper–Scissors</h1>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="flex justify-between items-center bg-gray-800 px-6 py-4 text-xl shadow-lg rounded-b-lg">
+            <div class=" text-left">
+                <h1 id="playerpoint" class="font-semibold">Player Win:</h1>
+            </div>
+            <div class=" text-center">
+                <h1 id="round" class="font-semibold">Round</h1>
+            </div>
+            <div class=" text-right">
+                <h1 id="Computerpoint" class="font-semibold">Computer Win:</h1>
+            </div>
+        </div>
+
+        <!-- Players -->
+        <div class="flex justify-between items-center mt-8 px-10">
+            <div class="flex  items-center">
+                <img src="tiwsleep.jpg" alt="Player" width="120px" class="rounded-lg shadow-lg mb-4">
+                <img src="" alt="" id="userChoicimg" width="120px" class="ml-5" >
+            </div>
+            <div class="bg-slate-800">
+                <h1 id="result" class="text-2xl font-semibold"></h1>
+            </div>
+            <div class="flex  items-center">
+                <img src="" alt="" id="computerChoicimg" width="120" class="mr-5">
+                <img src="ku.jpg" alt="Computer" width="120px" class="rounded-lg shadow-lg mb-4">
+            </div>
+        </div>
+        <div>
+            <div class="flex justify-between">
+                <h2 class="font-semibold px-5">🔥North Youngboy🔥</h2>
+                <h2 class="font-semibold px-6">🔥Samuel Johaz🔥</h2>
+            </div>
+        </div> 
+        <!-- Game Choices -->
+        <div class="flex justify-center space-x-8 p-5 mt-10  rounded-lg shadow-lg cursor-pointer">
+            <div class="flex flex-col items-center">
+                <img src="rock.png" id="rock"  onclick="sad('rock')" alt="Rock" width="100px" class="hover:scale-110 transition-transform duration-300">
+                  <!-- hover:scale-110 - ขยายขนาดองค์ประกอบขึ้น 10% เมื่อวางเมาส์เหนือ -->
+                  <!-- transition-transform - ทำให้การเปลี่ยนแปลงขนาดเกิดขึ้นอย่างนุ่มนวล -->
+                  <!-- duration-300 - กำหนดให้การเปลี่ยนแปลงขนาดใช้เวลา 0.3 วินาที -->
+                <p class="mt-2 text-white font-semibold">Rock</p>
+            </div>
+            <div class="flex flex-col items-center"> 
+                <img src="scissor.png" id="scissor" onclick="sad('scissor')" alt="Scissors" width="100px" class="hover:scale-110 transition-transform duration-300">
+                <p class="mt-2 text-white font-semibold">Scissors</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="paper.png" id="paper" onclick="sad('paper')" alt="Paper" width="100px" class="hover:scale-110 transition-transform duration-300">
+                <p class="mt-2 text-white font-semibold">Paper</p>
+            </div>
+        </div>
+    </div>
+    <script language ="javascript" type="text/javascript" >
+        let userpoint = 0;
+        let computerpoint = 0;
+        var round = 0;
+
+        function sad(userChoice){
+            const choice =['rock','paper','scissor'];
+            const comChoices = choice[Math.floor(Math.random()*3)];
+
+            document.getElementById('userChoicimg').src = userChoice + '.png';
+            document.getElementById('computerChoicimg').src = comChoices + '.png';
+
+            let result = winlose(userChoice,comChoices);
+            document.getElementById('result').textContent = result;
+
+            
+            if(result.includes("Win")){
+                userpoint++;
+            }else if(result.includes("Lose")){
+                computerpoint++;
+            }
+            if(userpoint == 3){
+                alert('North youngboy Win');
+                reset();
+            }else if(computerpoint == 3){
+                alert('Samuel Johaz Win');
+                reset();
+            }
+
+            document.getElementById('round').textContent = 'Round: ' + round;
+            document.getElementById('playerpoint').textContent = 'Player Win: ' + userpoint;
+            document.getElementById('Computerpoint').textContent = 'Computer Win: ' + computerpoint;
+           
+        }
+
+        function winlose(user,computer){
+            if(user == computer){
+                round++;
+                return "Draw";
+            }else if(
+                (user == 'paper' && computer == 'rock') || 
+                (user == 'sccissor' && computer == 'paper') ||
+                (user == 'rock' && computer == 'scissor')
+            ){
+                round++;
+                return "You Win";
+            }else{
+                round++;
+                return "You Lose";
+            }
+            
+        }
+
+        function reset(){
+            userpoint = '';
+            computerpoint = '';
+            round = '';
+           
+            document.getElementById('result').textContent ='';
+            document.getElementById('userChoicimg').src ='#';
+            document.getElementById('computerChoicimg').src ='#';
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ข้าวต้ม</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="relative">
+  <nav class="">
+    <header class="bg-red-600 shadow-md">
+      <div class="container mx-auto px-4 py-4">
+        <div class="w-full flex items-center">
+            <a href="home.html">
+                <img src="images/logo.png" alt="Logo" class="h-16">
+            </a>
+          <form action="#" method="GET" class="ml-10 flex-grow">
+            <input type="text" name="search" placeholder="What would you like to eat?" class="px-4 py-2 w-2/3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">          
+          </form>
+          <div class="ml-4 flex items-center space-x-6">
+            <a href="#" id="cart-icon" class="relative">
+              <img src="images/cark.png" alt="Cart" class="h-8 w-8">
+              <span id="cart-count" class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded-full">0</span>
+            </a>
+            <a href="#"><img src="images/heart.png" alt="Favorites" class="h-6 w-6"></a>
+            <a href="Account.html"><img src="images/user2.png" alt="Profile" class="h-6 w-6"></a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </nav>
+
+  <div>
+    <ul class="mt-6 flex justify-center space-x-6">
+        <li><a href="product.html" class="text-gray-700 hover:text-blue-500 font-medium text-xl px-4 py-2 rounded">Deals</a></li>
+        <li><a href="product.html" class="text-gray-700 hover:text-blue-500 font-medium text-xl px-4 py-2 rounded">Food</a></li>
+        <li><a href="product.html" class="text-gray-700 hover:text-blue-500 font-medium text-xl px-4 py-2 rounded">Most Popular</a></li>
+        <li><a href="Payment.html" class="text-gray-700 hover:text-blue-500 font-medium text-xl px-4 py-2 rounded">My Orders</a></li>
+    </ul>
+  </div>
+      
+  <main class="container mx-auto px-4 py-6 ">
+
+    <section class="mt-8">
+        <div class="grid grid-cols-4 gap-x-10 gap-y-8">
+            <div class="border-2 border-black p-4 text-center">
+                <img src="images/leng.png" alt="อาหาร" class="w-full h-auto">
+                <div class="text-lg my-2">ข้าวต้มเล้งเห็ดหอม</div>
+                <div class="text-md my-2">50 บาท</div>
+                <button class="bg-black text-white py-2 w-1/3 text-md rounded-full hover:bg-gray-700 add-to-cart">เลือก</button>
+            </div>
+            <div class="border-2 border-black p-4 text-center">
+                <img src="images/tubtim.png" alt="อาหาร" class="w-full h-auto">
+                <div class="text-lg my-2">ข้าวปลาทับทิม</div>
+                <div class="text-md my-2">50 บาท</div>
+                <button class="bg-black text-white py-2 w-1/3 text-md rounded-full hover:bg-gray-700 add-to-cart">เลือก</button>
+            </div>
+            <div class="border-2 border-black p-4 text-center">
+                <img src="images/kung.png" alt="อาหาร" class="w-full h-auto">
+                <div class="text-lg my-2">ข้าวต้มกุ้ง</div>
+                <div class="text-md my-2">50 บาท</div>
+                <button class="bg-black text-white py-2 w-1/3 text-md rounded-full hover:bg-gray-700 add-to-cart">เลือก</button>
+            </div>
+            <div class="border-2 border-black p-4 text-center">
+                <img src="images/boran2.png" alt="อาหาร" class="w-full h-auto">
+                <div class="text-lg my-2">ข้าวต้มเครื่องโบราณ</div>
+                <div class="text-md my-2">50 บาท</div>
+                <button class="bg-black text-white py-2 w-1/3 text-md rounded-full hover:bg-gray-700 add-to-cart">เลือก</button>
+            </div>
+            <div class="border-2 border-black p-4 text-center">
+                <img src="images/musub.png" alt="อาหาร" class="w-full h-auto">
+                <div class="text-lg my-2">ข้าวต้มหมูสับ</div>
+                <div class="text-md my-2">50 บาท</div>
+                <button class="bg-black text-white py-2 w-1/3 text-md rounded-full hover:bg-gray-700 add-to-cart">เลือก</button>
+            </div>
+            <div class="border-2 border-black p-4 text-center">
+                <img src="images/dori.png" alt="อาหาร" class="w-full h-auto">
+                <div class="text-lg my-2">ข้าวต้มปลาดอรี</div>
+                <div class="text-md my-2">50 บาท</div>
+                <button class="bg-black text-white py-2 w-1/3 text-md rounded-full hover:bg-gray-700 add-to-cart">เลือก</button>
+            </div>
+            <div class="border-2 border-black p-4 text-center">
+                <img src="images/gao.jpg" alt="อาหาร" class="w-full h-auto">
+                <div class="text-lg my-2">ข้าวต้มปลาเก๋า</div>
+                <div class="text-md my-2">50 บาท</div>
+                <button class="bg-black text-white py-2 w-1/3 text-md rounded-full hover:bg-gray-700 add-to-cart">เลือก</button>
+            </div>
+            <div class="border-2 border-black p-4 text-center">
+                <img src="images/tomyam.jpg" alt="อาหาร" class="w-full h-auto">
+                <div class="text-lg my-2">ข้าวต้มยำกุ้ง</div>
+                <div class="text-md my-2">50 บาท</div>
+                <button class="bg-black text-white py-2 w-1/3 text-md rounded-full hover:bg-gray-700 add-to-cart">เลือก</button>
+            </div>
+        </div>
+    </section>
+    
+  </main>
+
+  <!-- แถบด้านข้างรถเข็น -->
+  <div id="cart-sidebar" class="fixed top-0 right-0 w-80 bg-white shadow-lg h-full z-50 overflow-y-auto transform translate-x-full transition-transform duration-300">
+    <div class="p-4 border-b">
+      <h2 class="text-xl font-bold">รถเข็น</h2>
+      <button id="close-cart" class="text-red-600 hover:text-red-800">Close</button>
+    </div>
+    <div id="cart-items" class="p-4">
+      <!-- รายการในรถเข็นจะถูกแทรกที่นี่ -->
+    </div>
+    <div id="cart-total" class="p-4 border-t">
+      <div class="flex justify-between items-center">
+        <span class="font-medium">ราคารวม</span>
+        <span class="font-bold">0 บาท</span>
+      </div>
+      <a href="Payment.html"><button class="bg-red-600 hover:bg-red-700 text-white w-full mt-4 py-2 rounded">ดูรายการ</button></a>
+    </div>
+  </div>
+
+  <footer class="bg-red-700 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div>
+          <p class="font-bold">Need Help ?</p>
+          <p>Visit our Customer Support for assistance or call us at</p>
+          <p class="font-bold">083-524-6335</p>
+        </div>
+        <div>
+          <p class="font-bold">Menu</p>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:underline">Deals</a></li>
+            <li><a href="#" class="hover:underline">Food</a></li>
+            <li><a href="#" class="hover:underline">Most Popular</a></li>
+            <li><a href="#" class="hover:underline">My Orders</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-bold">Info</p>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:underline">FAQ</a></li>
+            <li><a href="#" class="hover:underline">About Us</a></li>
+            <li><a href="#" class="hover:underline">Customer Support</a></li>
+            <li><a href="#" class="hover:underline">Locations</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-bold">My Choice</p>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:underline">Favorites</a></li>
+            <li><a href="#" class="hover:underline">My Orders</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // เปิดแถบด้านข้างรถเข็น
+    document.getElementById('cart-icon').addEventListener('click', function() {
+      document.getElementById('cart-sidebar').classList.remove('translate-x-full');
+    });
+  
+    // ปิดแถบด้านข้างรถเข็น
+    document.getElementById('close-cart').addEventListener('click', function() {
+      document.getElementById('cart-sidebar').classList.add('translate-x-full');
+    });
+  
+    // เก็บรายการในรถเข็นและแสดงราคารวม
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalElement = document.querySelector('#cart-total .font-bold');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // ดึงชื่อและราคาของรายการอาหาร
+        const itemName = this.parentElement.querySelector('.text-lg').textContent;
+        const itemPrice = parseFloat(this.parentElement.querySelector('.text-md').textContent);
+  
+        // สร้างรายการอาหารในรถเข็น
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('flex', 'justify-between', 'items-center', 'border-b', 'py-2');
+        cartItem.innerHTML = `
+          <span>${itemName}</span>
+          <span>${itemPrice} บาท</span>
+          <button class="text-red-600 hover:text-red-800 remove-from-cart">ลบ</button>
+        `;
+  
+        // เพิ่มรายการอาหารในรถเข็น
+        cartItemsContainer.appendChild(cartItem);
+        updateCartTotal();
+        saveCartToLocalStorage();
+  
+        // เพิ่่มปุ่มลบของรายการอาหารในรถเข็น
+        cartItem.querySelector('.remove-from-cart').addEventListener('click', function() {
+          cartItem.remove();
+          updateCartTotal();
+          saveCartToLocalStorage();
+        });
+      });
+    });
+  
+    // อัพเดทราคารวมในรถเข็น
+    function updateCartTotal() {
+      let total = 0;
+      // คำนวณราคารวมจากรายการอาหารในรถเข็น
+      cartItemsContainer.querySelectorAll('.flex').forEach(item => {
+        const itemPrice = parseFloat(item.querySelector('span:nth-child(2)').textContent);
+        total += itemPrice;
+      });
+      cartTotalElement.textContent = `${total} บาท`;
+  
+      
+      document.getElementById('cart-count').textContent = cartItemsContainer.children.length;
+    }
+    
+    function saveCartToLocalStorage() {
+      const cartItems = [];
+      // เก็บข้อมูลชื่อและราคาของรายการอาหารในรถเข็น
+      cartItemsContainer.querySelectorAll('.flex').forEach(item => {
+        const itemName = item.querySelector('span:nth-child(1)').textContent;
+        const itemPrice = parseFloat(item.querySelector('span:nth-child(2)').textContent);
+        cartItems.push({ name: itemName, price: itemPrice });
+      });
+      
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+    }
+  </script>
+</body>
+</html>

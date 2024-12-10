@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col justify-center items-center h-screen">
+    <div onmouseover="Mousehover()" id="Div1" class="border border-black border-2 m-5 p5 text-center w-[200px] " > click me</div>
+    <div onclick="ChangeColor()" id="Div2" class="border border-black border-2 m-5 p5 text-center w-[200px] " >click me</div>
+
+    <script>
+        function Mousehover(){
+            alert("Don't To")
+            console.log("Mousehover")
+        }
+
+        function ChangeColor(){
+            document.getElementById("Div2").style.backgroundColor="red"
+            document.getElementById("Div2").style.color="white"
+        }
+        
+    </script>
+</body>
+</html>

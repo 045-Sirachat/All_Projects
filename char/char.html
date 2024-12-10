@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Charts Side by Side</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* จัดการให้กราฟแสดงข้างกัน */
+        .chart-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap; /* หากหน้าจอแคบจะแสดงแบบแนวตั้ง */
+            gap: 20px; /* ช่องว่างระหว่างกราฟ */
+        }
+
+        canvas {
+            max-width: 500px; /* ขนาดความกว้างสูงสุดของแต่ละกราฟ */
+        }
+    </style>
+</head>
+<body>
+    <h2>Monthly Min/Max Values for PM2.5, CO2, NOx</h2>
+
+    <!-- กราฟ PM2.5 และ CO2 อยู่ข้างกัน -->
+    <div class="chart-container">
+        <div>
+            <h3>PM2.5 Min/Max</h3>
+            <canvas id="pm25Chart"></canvas>
+        </div>
+        <div>
+            <h3>CO2 Min/Max</h3>
+            <canvas id="co2Chart"></canvas>
+        </div>
+    </div>
+
+    <!-- กราฟ NOx อยู่ด้านล่าง -->
+    <h3>NOx Min/Max</h3>
+    <canvas id="noxChart" width="800" height="400"></canvas>
+
+    <script>
+        // ข้อมูลตัวอย่างสำหรับทั้ง 12 เดือน
+        const months = [
+            'January', 'February', 'March', 'April', 'May', 'June', 
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+        const pm25_min = [15, 20, 18, 22, 19, 17, 21, 23, 18, 20, 22, 24];
+        const pm25_max = [40, 50, 45, 55, 48, 52, 49, 53, 46, 51, 54, 57];
+        const co2_min = [300, 320, 310, 330, 315, 305, 325, 335, 310, 320, 340, 345];
+        const co2_max = [400, 420, 410, 430, 425, 415, 435, 445, 410, 420, 450, 455];
+        const nox_min = [0.02, 0.025, 0.022, 0.03, 0.028, 0.026, 0.024, 0.029, 0.023, 0.025, 0.027, 0.031];
+        const nox_max = [0.04, 0.045, 0.043, 0.05, 0.048, 0.046, 0.044, 0.049, 0.042, 0.045, 0.047, 0.051];
+
+        // กราฟ PM2.5
+        const ctxPm25 = document.getElementById('pm25Chart').getContext('2d');
+        const pm25Chart = new Chart(ctxPm25, {
+            type: 'line',
+            data: {
+                labels: months,
+                datasets: [
+                    {
+                        label: 'PM2.5 Min',
+                        data: pm25_min,
+                        borderColor: 'blue',
+                        backgroundColor: 'blue',
+                        fill: false,
+                    },
+                    {
+                        label: 'PM2.5 Max',
+                        data: pm25_max,
+                        borderColor: 'cyan',
+                        backgroundColor: 'cyan',
+                        fill: false,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Months' } },
+                    y: { title: { display: true, text: 'PM2.5 Values' } }
+                }
+            }
+        });
+
+        // กราฟ CO2
+        const ctxCo2 = document.getElementById('co2Chart').getContext('2d');
+        const co2Chart = new Chart(ctxCo2, {
+            type: 'line',
+            data: {
+                labels: months,
+                datasets: [
+                    {
+                        label: 'CO2 Min',
+                        data: co2_min,
+                        borderColor: 'green',
+                        backgroundColor: 'green',
+                        fill: false,
+                    },
+                    {
+                        label: 'CO2 Max',
+                        data: co2_max,
+                        borderColor: 'lime',
+                        backgroundColor: 'lime',
+                        fill: false,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Months' } },
+                    y: { title: { display: true, text: 'CO2 Values (ppm)' } }
+                }
+            }
+        });
+
+        // กราฟ NOx
+        const ctxNox = document.getElementById('noxChart').getContext('2d');
+        const noxChart = new Chart(ctxNox, {
+            type: 'line',
+            data: {
+                labels: months,
+                datasets: [
+                    {
+                        label: 'NOx Min',
+                        data: nox_min,
+                        borderColor: 'red',
+                        backgroundColor: 'red',
+                        fill: false,
+                    },
+                    {
+                        label: 'NOx Max',
+                        data: nox_max,
+                        borderColor: 'orange',
+                        backgroundColor: 'orange',
+                        fill: false,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Months' } },
+                    y: { title: { display: true, text: 'NOx Values (ppm)' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Convert a string into a date object.</h2>
+    <p id="demo"></p>
+    <button onclick="sends_data()">sends_data</button>
+    <script>
+         const json_txt = '{"name":"Oak","birth":"2004-03-11 ","city":"ตรัง(พลเมืองตรัง)"}';
+            const obj = JSON.parse(json_txt, function (key, value) {
+                if (key == "birth") {
+                    
+                    return new Date(value);
+                } else {
+                    return value;
+                }
+            });
+
+    const today = new Date(); 
+    let age = today.getFullYear() - obj.birth.getFullYear(); 
+   
+    document.getElementById("demo").innerHTML = obj.name + ", " + age + " years old ";
+
+        function sends_data() {
+            location.assign("http://172.21.123.209/siwipa/test_json.php?Oak=" + json_txt);
+        }
+    
+</script>
+</body>
+</html>

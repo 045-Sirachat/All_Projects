@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+      
+        const json_txt ='{"name":"Sirchat","birth":"2004-03-11","city":"ตรัง(พลเมืองตรัง)"}';
+        
+       
+        const obj = JSON.parse(json_txt);
+        
+     
+        let text = "";
+        for (let key in obj) {
+            text += obj[key] + " , ";
+        }
+     
+        
+     
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

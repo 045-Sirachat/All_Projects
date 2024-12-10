@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bar Chart Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body>
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+    <script>
+        // กำหนดข้อมูลสำหรับกราฟ
+        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = ["red", "green", "blue", "orange", "brown"];
+
+        // สร้างกราฟ Bar Chart ด้วย Chart.js
+        new Chart("myChart", {
+            type: "bar", // ชนิดของกราฟ
+            data: {
+                labels: xValues, // ป้ายชื่อแกน X
+                datasets: [{
+                    backgroundColor: barColors, // สีของแท่งกราฟ
+                    data: yValues // ข้อมูลที่จะแสดงในกราฟ
+                }]
+            },
+            options: {
+                legend: { display: false }, // ซ่อน Legend (คำอธิบาย)
+                title: {
+                    display: true, // แสดงชื่อกราฟ
+                    text: "World Wine Production 2018" // ข้อความชื่อกราฟ
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true // ให้แกน Y เริ่มจาก 0
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+</html>

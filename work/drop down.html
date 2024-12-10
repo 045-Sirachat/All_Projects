@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white border border-black fixed w-full z-10 ">
+        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img src="image/social-media.gif" alt="Logo" class="h-8">
+                <a href="index.html" class="text-black font-semibold text-lg">Sirachat Sirporn</a>
+            </div>
+            <div>
+                <ul class="mt-6 flex justify-center">
+                    <li class="dropdown relative">
+                        <a href="#" class="text-gray-700 hover:text-blue-500 hover:bg-gray-200 font-medium px-4 py-2 rounded">Our Produce</a>
+                        <div class="dropdown-menu absolute bg-white shadow-lg rounded mt-2 py-2">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Product 1</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Product 2</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Product 3</a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-500 hover:bg-gray-200 font-medium px-4 py-2 rounded">Contact Me</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-500 hover:bg-gray-200 font-medium px-4 py-2 rounded">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+    <!-- Main Content -->
+    <div class="pt-16">
+        <!-- Your main content here -->
+        <div class="container mx-auto mt-8">
+            <div class="flex">
+                    <img src="image/jack.jpg" alt="" class="w-1/3">
+            <div class="w-2/3 flex flex-col space-y-4">
+                    <div class="bg-gray-200 p-4 flex-1">นายกรชวัล เพชรแก้ว 6540011004</div>
+                    <div class="bg-gray-200 p-4 flex-1">นายณัฐวร ยอดระบำ 6540011016</div>
+                    <div class="bg-gray-200 p-4 flex-1">นายศิรชัช สิริพร 6540011045</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+</head>
+<body>
+    <div onclick="Changewords()" id="Div1">
+        Hello world 1
+    </div>
+    <div onclick="Changecolor()" id="Div2"        >
+        โทดๆ มายแบดๆ
+    </div>
+
+    <script>
+        function Changewords() { 
+            document.getElementById('Div1').textContent = 'Sawasdee'; 
+        }
+        function Changecolor() {
+            document.getElementById('Div2').style.background = 'yellow';
+        }
+
+    </script>
+</body>
+</html>
